@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}
+    About
+{% endblock %}
+
+
+{% block content %}
+    <h1 id="about">About Us</h1>
+    <p>Here is our team members who can write the blogs on this site for you!</p>
+
+    {% for item in about %}
+        <div class="card" style="width: 18rem;">
+            <img src="{{item.image.url}}" class="card-img-top" alt="image">
+            <div class="card-body">
+            <h5 class="card-title">{{item.Author_Name}}</h5>
+            <p class="card-text">{{item.description}}</p>
+            
+            </div>
+        </div>
+    {% endfor %}
+
+ 
+{% endblock %}
